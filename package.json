@@ -11,12 +11,21 @@
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@nuxtjs/color-mode": "^3.4.2",
     "@prisma/nuxt": "^0.0.34",
     "@sidebase/nuxt-auth": "^0.8.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.417.0",
     "nuxt": "^3.12.4",
+    "radix-vue": "^1.9.2",
+    "shadcn-nuxt": "^0.10.4",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "latest"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "@prisma/client": "^5.17.0",
     "prisma": "^5.17.0"
   }
