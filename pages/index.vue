@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const { data, status } = useAuth();
+</script>
+
 <template>
-    Hello world!
+	<pre>
+        {{ data }}
+    </pre>
+	{{ status }}
 </template>
