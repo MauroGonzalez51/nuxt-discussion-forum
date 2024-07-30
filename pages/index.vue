@@ -3,6 +3,15 @@ useHead({
 	title: "Home",
 });
 
+import {
+	NavigationMenu,
+	NavigationMenuContent,
+	NavigationMenuItem,
+	NavigationMenuLink,
+	NavigationMenuList,
+	NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
 const navbarLinks: NavbarLink[] = [
 	{
 		to: "/",
@@ -15,7 +24,7 @@ const navbarLinks: NavbarLink[] = [
 		label: "Search",
 		subpath: [
 			{
-				to: "/search,",
+				to: "/search",
 				icon: "material-symbols:forum-outline",
 				label: "Forum",
 			},
@@ -26,6 +35,11 @@ const navbarLinks: NavbarLink[] = [
 			},
 		],
 	},
+	{
+		to: "/dashboard/notifications",
+		icon: "material-symbols:notifications",
+		label: "Notifications",
+	},
 ];
 
 const openDropdowns = ref<{ [key: string]: boolean }>({});
@@ -35,12 +49,58 @@ const toggleDropdown = (label: string) =>
 </script>
 
 <template>
-	<button
-		type="button"
-		class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+	<header
+		class="sm:hidden border-b border-primary/10 px-4 h-14 w-full inline-flex items-center"
 	>
-		<Icon name="heroicons:bars-3-bottom-left" class="text-3xl" />
-	</button>
+		<NavigationMenu>
+			<NavigationMenuList>
+				<NavigationMenuItem
+					v-for="item in navbarLinks"
+					:key="item.label"
+				>
+					<template v-if="item.subpath">
+						<NavigationMenuTrigger
+							class="inline-flex items-center gap-1"
+						>
+							<span class="font-normal text-base">{{
+								item.label
+							}}</span>
+						</NavigationMenuTrigger>
+						<NavigationMenuContent>
+							<ul
+								class="p-4 w-96 grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-4"
+							>
+								<li
+									v-for="subItem in item.subpath"
+									:key="subItem.label"
+								>
+									<NavigationMenuLink>
+										<NuxtLink
+											:to="subItem.to"
+											class="w-full h-full flex items-center justify-start gap-2 select-none"
+										>
+											<Icon :name="subItem.icon" />
+											<span>{{ subItem.label }}</span>
+										</NuxtLink>
+									</NavigationMenuLink>
+								</li>
+							</ul>
+						</NavigationMenuContent>
+					</template>
+					<template v-else>
+						<NavigationMenuLink>
+							<NuxtLink
+								:to="item.to"
+								class="w-full h-full inline-flex items-center gap-1 select-none"
+							>
+								<span>{{ item.label }}</span>
+							</NuxtLink>
+						</NavigationMenuLink>
+					</template>
+				</NavigationMenuItem>
+			</NavigationMenuList>
+		</NavigationMenu>
+	</header>
 
 	<aside
 		class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"

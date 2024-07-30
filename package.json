@@ -29,6 +29,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@prisma/client": "^5.17.0",
-    "prisma": "^5.17.0"
+    "prisma": "^5.17.0",
+    "typescript": "^5.5.4"
   }
 }
