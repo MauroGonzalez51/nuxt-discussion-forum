@@ -1,10 +1,10 @@
 export {};
 
 declare global {
-	interface NavbarLink {
+	interface NavigationLink {
 		label: string;
 		icon: string;
 		to: string;
-		subpath?: NavbarLink[];
+		subpath?: navigationLink[];
 	}
 }
