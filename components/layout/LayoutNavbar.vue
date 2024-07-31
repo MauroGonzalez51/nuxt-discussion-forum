@@ -12,7 +12,7 @@ import { navigationLinks } from "@/lib/navigationLinks";
 
 <template>
 	<header
-		class="sm:hidden fixed bg-slate-50 backdrop-opacity-5 border-b border-primary/10 px-4 h-14 w-full inline-flex items-center"
+		class="bg-slate-50 backdrop-opacity-5 border-b border-primary/10 px-4 w-full inline-flex items-center"
 	>
 		<NavigationMenu>
 			<NavigationMenuList>

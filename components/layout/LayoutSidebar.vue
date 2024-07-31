@@ -9,7 +9,7 @@ const toggleDropdown = (label: string) =>
 
 <template>
 	<aside
-		class="z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+		class="z-40 h-screen transition-transform -translate-x-full sm:translate-x-0"
 		aria-label="Sidebar"
 	>
 		<div
