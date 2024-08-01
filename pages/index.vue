@@ -2,6 +2,10 @@
 useHead({
 	title: "Home",
 });
+
+definePageMeta({
+	auth: false,
+});
 </script>
 
 <template>

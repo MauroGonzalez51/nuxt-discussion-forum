@@ -13,7 +13,7 @@ const toggleDropdown = (label: string) =>
 		aria-label="Sidebar"
 	>
 		<div
-			class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 border-r border-gray-500/20"
+			class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 border-r border-gray-500/20 flex flex-col justify-between"
 		>
 			<ul class="space-y-2 font-medium">
 				<li v-for="item in navigationLinks">
@@ -82,6 +82,10 @@ const toggleDropdown = (label: string) =>
 					</template>
 				</li>
 			</ul>
+
+			<div class="w-full h-16">
+				<SidebarUserCard />
+			</div>
 		</div>
 	</aside>
 </template>
