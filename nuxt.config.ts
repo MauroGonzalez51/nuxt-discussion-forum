@@ -8,7 +8,8 @@ export default defineNuxtConfig({
         "@nuxtjs/tailwindcss",
         "shadcn-nuxt",
         "@nuxtjs/color-mode",
-        "@nuxt/icon"
+        "@nuxt/icon",
+        "@nuxt/image"
     ],
 	prisma: {
 		autoSetupPrisma: true,
